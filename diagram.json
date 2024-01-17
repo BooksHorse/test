@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "author": "Books Horse",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled3",
+      "top": 339.14,
+      "left": 317.03,
+      "attrs": { "i2cAddress": "0x3C" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled4",
+      "top": 339.14,
+      "left": 416.63,
+      "attrs": { "i2cAddress": "0x3D" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 271.94,
+      "left": 317.03,
+      "attrs": { "i2cAddress": "0x3A" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled2",
+      "top": 271.94,
+      "left": 416.63,
+      "attrs": { "i2cAddress": "0x3B" }
+    },
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 227.4, "left": -54.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "oled1:VCC", "bb1:bp.25", "red", [ "v-15.89", "h-83.48", "v148.56" ] ],
+    [ "oled1:GND", "bb1:bn.25", "black", [ "v-12.1", "h-63.59", "v161.38", "h-1.9" ] ],
+    [ "bb1:tp.25", "oled1:SCL", "green", [ "v-0.74", "h118.97" ] ],
+    [ "bb1:tn.25", "oled1:SDA", "green", [ "v-0.41", "h131.48" ] ],
+    [ "bb1:tp.24", "oled2:SCL", "green", [ "v-3.61", "h259.72" ] ],
+    [ "bb1:tn.24", "oled2:SDA", "green", [ "v0.31", "h262.04" ] ],
+    [ "bb1:tn.23", "oled3:SDA", "green", [ "h375.08", "v99.58", "h-219.95" ] ],
+    [ "bb1:tp.23", "oled3:SCL", "green", [ "h371.43", "v105.59", "h-226.13" ] ],
+    [ "bb1:tp.21", "oled4:SCL", "green", [ "h358.56", "v108.62", "h-78.86" ] ],
+    [ "bb1:tn.21", "oled4:SDA", "green", [ "h384.94", "v100.05", "h-95.41" ] ],
+    [
+      "oled4:GND",
+      "bb1:bn.24",
+      "black",
+      [ "h137.94", "v113.61", "h-178.69", "v-12.67", "h-191.25" ]
+    ],
+    [
+      "oled3:GND",
+      "bb1:bn.24",
+      "black",
+      [ "h-40.69", "v111.18", "h111.32", "v-0.07", "h-194.9", "v-33.01" ]
+    ],
+    [
+      "oled2:GND",
+      "bb1:bn.24",
+      "black",
+      [ "v-18.53", "h189.34", "v233.77", "h-424.39", "v-69.94" ]
+    ],
+    [ "oled2:VCC", "bb1:bn.23", "red", [ "v-25.49", "h125.92", "v244.21", "h-382.6", "v-73.42" ] ],
+    [ "mega:21", "bb1:tp.18", "green", [ "v-33.27", "h86.25", "v234.93", "h-254.74" ] ],
+    [ "mega:20", "bb1:tn.17", "green", [ "v-23.64", "h84.43", "v206.06", "h-260.41", "v13.59" ] ],
+    [ "mega:5V", "bb1:bp.7", "red", [ "v27.3", "h-116.64", "v197.57" ] ],
+    [ "mega:GND.2", "bb1:bn.1", "black", [ "v18.81", "h-207.34" ] ]
+  ],
+  "dependencies": {}
+}
